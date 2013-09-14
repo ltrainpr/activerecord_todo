@@ -9,7 +9,7 @@ case command
 when "list" then puts Task.all
 when "add" then Task.create!(sentence.join(" "))
 when "delete" then Task.destroy(task_id)
-when "complete" then Task.complete(task_id)
+when "complete" then Task.find(sentence).complete!
 else raise ArgumentError, "Please select list, add, delete, or complete"
 end
 
